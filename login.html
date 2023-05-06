@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="shortcut icon" href="Imagens/faviconTIranos.ico" type="image/x-icon">
+    <script src="javascript.js"></script>
+    <link rel="stylesheet" href="login.css">
+    
+</head>
+<body style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <div id="logar" style="display: flex; flex-direction: column; justify-content: center; align-items: center;background-color: rgb(47, 117, 179); width: 50%; height: 500px;"   >
+        <div id="flogin" style= "flex-direction: column;">
+            <form action="index.html" onSubmit="return emailsenha(this);">
+
+                <b>E-mail:</b> <input type="email"    name="usuario" maxlength="100" size="40" id="UsuarioLogin"><br> <br> <br>
+                <b>Senha: </b> <input type="password" name="senha" maxlength="10" size="10" > <br> <br>
+                <input type="submit" name="botao" value="Logar" >
+            </form>
+        </div>
+    </div>
+</body>
+</html>

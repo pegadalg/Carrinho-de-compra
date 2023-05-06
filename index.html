@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Virtual</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="shortcut icon" href="Imagens/faviconTIranos.ico" type="image/x-icon">
+    <script src="javascript.js"></script>
+</head>
+<body>
+    <header>
+        <img src="Imagens/logoredonda-removebg-preview (1).png" alt="" >
+    </header>
+
+    <div class="fundo">
+        <div class="prods" id="prods">
+            <div class="prod">
+                
+                <img onmouseover="mostraTrasCorta(this)" onmouseout="mostraFrenteCorta(this)" src="Imagens/rppng/Corta_VentoPRIN-removebg-preview.png" alt="">
+               
+                
+                <div>
+                    <p>
+                        Jaqueta Corta Vento       -   R$ 700,00 
+                    </p>
+                </div>
+                
+                <input onchange="cortavento() " type="number" min="0" max="9" oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"maxlength = "1" id="Corta" >
+                
+                
+            </div>
+            <div class="prod">
+                
+                <img onmouseover="mostraTrasJaqueta(this)" onmouseout="mostraFrenteJaqueta(this)" src="Imagens/rppng/Moletom_jaquetaPRIN-removebg-preview.png" alt="">
+                
+                <div>
+                    <p>
+                       Jaqueta Moletom       -   R$ 600,00
+                    </p>
+                </div>
+                
+                <input onchange="Molet()" type="number" min="0" max="9" oninput=" if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"maxlength = "1" id="Jaqueta" >
+                
+            </div>
+            <div class="prod">
+                
+                <img onmouseover="mostraTrasCalca(this)" onmouseout="mostraFrenteCalca(this)" src="Imagens/rppng/Calca_moletomPRIN-removebg-preview.png" alt="">
+                
+                <div>
+                    <p>
+                        Calça Moletom       -   R$ 400,00                                
+                    </p> 
+                </div>
+                
+                <input onchange="Calc()" type="number" min="0" max="9" oninput=" if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"maxlength = "1" id="Calca" >
+                
+            </div>
+            <div class="prod">
+                
+                <img onmouseover="mostraTrasBermuda(this)" onmouseout="mostraFrenteBermuda(this)" src="Imagens/rppng/Bermuda_moletomPRIN-removebg-preview.png" alt="">
+                
+                <div>
+                    <p>
+                        Bermuda Moletom       -   R$ 350,00
+                    </p>
+                </div>
+                
+                <input onchange="Berm() " type="number" min="0" max="9" oninput=" if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"maxlength = "1" id="Bermuda" >
+                
+            </div>
+            <div class="prod">
+                
+                <img onmouseover="mostraTrasCalcao(this)" onmouseout="mostraFrenteCalcao(this)" src="Imagens/rppng/Calcao_basquetePRIN-removebg-preview.png" alt="">
+                
+                <div>
+                    <p>
+                        Calção Basquete       -   R$ 300,00 
+                    </p>
+                </div>
+                
+                <input onchange="Cauc() " type="number" min="0" max="9" oninput=" if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"maxlength = "1" id="Calcao" >
+                
+            </div>
+            
+        </div>
+
+        <div class="teste">
+            <div class="fimcompra" id="fimcompra">
+                <h2>Carrinho</h2>
+                <p><b>Sua compra</b>  </p>
+                <div class="fimdacompra">
+                    <p id="ccCorta"></p>
+                    <p id="ccJaqueta"></p>
+                    <p id="ccCalca"></p>
+                    <p id="ccBermuda"></p>
+                    <p id="ccCalcao"> </p>
+                    <p id="ccValorToti"></p>
+                </div>
+                 <b>Formas de Pagamento:</b> 
+                <div class="logos">
+
+                    
+                    <input type="radio" name="habilita" value= "1"onclick="cart(this.value) "> <img src="Imagens/cartao-removebg-preview.png" alt="">
+                    <input type="radio" name="habilita" value="2" onclick="cart(this.value)"> <img src="Imagens/boleto-logo.png" alt="">
+                    <input type="radio" name="habilita" value="3" onclick="cart(this.value) ; pix()"> <img src="Imagens/logo-do-pix-png-e-vetor.png" alt=""> <br>              
+                    
+                    
+                </div>
+
+                <div class="formis" style="display: none;" id="formis">
+                    <form id="american" class="american" name="american">
+                        
+                        Nome:<input type="text" id="xnome" name="xnome"   minlength="2"  maxlength="19"><br>
+                        Sobrenome:<input type="text" id="xnome" name="xnome"   minlength="2" maxlength="19"><br>
+                
+                        Número do Cartão:<input type="" id="xnumero" name="xnumero" onchange="cartao()" maxlength="16"> <div class="" id=""  >
+                            <img class="cartivisa" id="cartivisa"  src="Imagens/VISA-removebg-preview.png" alt="" style="width: 60px; height: auto; display: none;">
+                            <img class="cartimaster" id="cartimaster"  src="Imagens/MASTERCARD-removebg-preview.png" alt="" style="width: 60px; height: auto; display: none;">
+                            <img class="cartiamex" id="cartiamex"  src="Imagens/AMERICANEXPRESS-removebg-preview.png" alt="" style="width: 60px; height: auto; display: none;">
+                        
+                        </div><br>
+                
+                        Data de Validade:<input type="month" id="xvalidade" name="xvalidade" min="2023-04"><br>
+            
+                        CVC:<input type="number" id="xCVC" name="CVC" maxlength="3" oninput=" if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"><br><br>
+                 
+                    </form>  
+                </div>
+
+                <div>
+                    <img class="pix" id="pix"  src="Imagens/qrcode12.jpg" alt="" style="width: 400px; height: auto; display: none;"> 
+                </div>
+
+                <h3 style="display: none;" id="bol">O BOLETO SERÁ ENVIADO EM SEU E-MAIL</h3>
+
+                  Digite seu CEP:<input type="text" id="CEP" onmouseover="calcularCEP()" name="CEP"  placeholder="00000-000" maxlength="9" > <br>
+
+                    Calcular Frete<input type="checkbox" id="fretado" onclick="calcularFrete()" > 
+                
+                <button id="botfim" style="display: none;" onclick="comprou()"> <a href="index.html" style="text-decoration: none;">Finalizar</a>    </button>
+            </div>
+        </div>
+
+
+        <div class="carrinho" >
+            <h3>Sua compra</h3>
+           <div> 
+                <p id="cCorta"></p>
+                <p id="cJaqueta"></p>
+                <p id="cCalca"></p>
+                <p id="cBermuda"></p>
+                <p id="cCalcao"> </p>
+            </div>
+
+            <p id="ValorToti"></p>
+
+            <button id="Fcarrinho"    class="Fcarrinho" onclick="finalizar()"> Finalizar Compra  </button>
+            <button  id="VCarrinho" class="VCarrinho" onclick="voltar()" > Voltar para o carrinho  </button>
+           
+        </div>  
+    </div>
+    
+</body>
+</html>
